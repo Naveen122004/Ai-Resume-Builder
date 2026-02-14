@@ -1,0 +1,82 @@
+/* Print Styles for Resume */
+@media print {
+  /* Hide all UI elements */
+  nav,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset page */
+  body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  /* Resume container */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Page setup */
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+
+  /* Resume content */
+  .resume-preview {
+    background: white !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: auto;
+  }
+
+  /* Typography */
+  .resume-preview * {
+    color: #000 !important;
+    background: white !important;
+  }
+
+  /* Prevent page breaks inside elements */
+  .resume-preview h1,
+  .resume-preview h2,
+  .resume-preview h3 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume-preview p,
+  .resume-preview div {
+    page-break-inside: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Section spacing */
+  .resume-preview > div {
+    page-break-inside: avoid;
+  }
+
+  /* Links */
+  .resume-preview a {
+    text-decoration: none;
+    color: #000 !important;
+  }
+
+  /* Remove any colored backgrounds */
+  .resume-preview,
+  .resume-preview * {
+    background-color: white !important;
+    background-image: none !important;
+  }
+
+  /* Borders - keep only black */
+  .resume-preview * {
+    border-color: #000 !important;
+  }
+}
